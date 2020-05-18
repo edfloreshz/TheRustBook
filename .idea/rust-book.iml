@@ -6,7 +6,22 @@
       <sourceFolder url="file://$MODULE_DIR$/fibonacci/examples" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/fibonacci/tests" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/fibonacci/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/slices/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/slices/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/slices/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/slices/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/modules/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/modules/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/modules/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/modules/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/restaurant/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/restaurant/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/restaurant/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/restaurant/benches" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/fibonacci/target" />
+      <excludeFolder url="file://$MODULE_DIR$/modules/target" />
+      <excludeFolder url="file://$MODULE_DIR$/restaurant/target" />
+      <excludeFolder url="file://$MODULE_DIR$/slices/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
