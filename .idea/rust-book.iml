@@ -21,7 +21,9 @@
       <sourceFolder url="file://$MODULE_DIR$/structs/structs/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/structs/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/playground/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/hash_map/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/fibonacci/target" />
+      <excludeFolder url="file://$MODULE_DIR$/hash_map/target" />
       <excludeFolder url="file://$MODULE_DIR$/modules/target" />
       <excludeFolder url="file://$MODULE_DIR$/playground/target" />
       <excludeFolder url="file://$MODULE_DIR$/restaurant/target" />
