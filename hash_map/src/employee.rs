@@ -12,7 +12,7 @@ impl Directory {
                 command_destructured[1].to_string(),
                 command_destructured[3].to_string()
             ) {
-            Some(res) => { },
+            Some(_) => {},
             None => {}
         }
         ()

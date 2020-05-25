@@ -6,7 +6,7 @@ use crate::pig_latin::test_transform;
 use crate::employee::test_employee;
 
 fn main() {
-    // test_grades();
-    // test_transform();
+    test_grades();
+    test_transform();
     test_employee();
 }
