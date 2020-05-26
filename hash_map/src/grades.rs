@@ -8,32 +8,28 @@
 use std::collections::HashMap;
 
 pub fn test_grades() {
-    let grades = vec![
+    let mut grades = [
         10, 10, 10, 9, 9, 8, 8, 8, 8, 8, 7, 7, 10, 9, 6, 7, 8, 8, 9, 10,
     ];
     let mean = mean(&grades);
-    let median = median(&grades);
+    let median = median(&mut grades);
     let mode = mode(&grades);
     println!("Mean: {} \nMedian: {} \nMode: {}", mean, median, mode);
 }
 
-pub fn mean(grades: &Vec<i32>) -> i32 {
+pub fn mean(grades: &[i32]) -> i32 {
     grades.iter().sum::<i32>() / grades.len() as i32
 }
 
-pub fn median(grades: &Vec<i32>) -> i32 {
-    let mut sorted_grades = grades.clone();
-    sorted_grades.sort();
-    match sorted_grades.len() % 2 {
-        0 => {
-            let middle = sorted_grades.len() / 2;
-            (sorted_grades[middle] + sorted_grades[middle + 1]) / 2
-        }
-        _ => sorted_grades[sorted_grades.len() / 2],
-    }
+pub fn median(grades: &mut [i32]) -> i32 {
+    grades.sort();
+    if grades.len() % 2 == 0 {
+        let middle = grades.len() / 2;
+        (grades[middle] + grades[middle + 1]) / 2
+    } else { grades[grades.len() / 2] }
 }
 
-pub fn mode(grades: &Vec<i32>) -> i32 {
+pub fn mode(grades: &[i32]) -> i32 {
     let mut hashed_grades = HashMap::new();
     let mut mode = (0, 0);
     let mut max = 0;
