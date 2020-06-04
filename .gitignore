@@ -5,3 +5,4 @@ target
 **/*.rs.bk
 generics/.DS_Store
 generics/src/main
+lifetime/src/main
