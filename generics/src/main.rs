@@ -8,10 +8,10 @@ fn main() {
     println!("{}", result);
 }
 
-fn largest<T: PartialOrd + Copy>(list: &[T]) -> T {
-    let mut largest = list[0];
-    for &item in list.iter() {
-        if item > largest {
+fn largest<T: PartialOrd>(list: &[T]) -> &T {
+    let mut largest = &list[0];
+    for item in list.iter() {
+        if item > &largest {
             largest = item;
         }
     }
