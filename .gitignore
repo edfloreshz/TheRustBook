@@ -6,3 +6,4 @@ target
 generics/.DS_Store
 generics/src/main
 lifetime/src/main
+generics/src/.DS_Store
