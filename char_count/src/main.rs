@@ -1,32 +1,33 @@
-use std::collections::HashMap;
-
 fn main() {
     count_chars("abradacabra");
 }
 
 fn count_chars(text: &str) -> Vec<(char, u8)> {
-    let mut count: Vec<(char, u8)> = Vec::new();
-    // let mut hashed_grades = HashMap::new();
-    // match text.chars().next() {
-    //     Some(letter) => match letter {
-    //         'a'..='z' => {
-    //             for (letter, count) in count {
-    //                 if letter == letter {}
-    //             }
-    //             count.push((letter, 1));
-    //         }
-    //         _ => println!("Character not supported"),
-    //     },
-    //     None => println!("End"),
-    // }
+    let mut letters = vec![];
+    let mut repetitions = vec![];
+    for c in text.chars() {
+        if !letters.contains(&c) {
+            letters.push(c);
+            repetitions.push((c, check_count_element(&c, &text)))
+        }
+    }
+    repetitions
+}
+
+fn check_count_element(pattern: &char, target: &str) -> u8 {
+    let mut count = 0;
+    for letter in target.chars() {
+        if letter == *pattern {
+            count += 1;
+        }
+    }
     count
 }
 
 #[test]
-#[should_panic]
 fn test_count() {
     assert_eq!(
-        vec![('r', 2), ('a', 5), ('b', 2), ('c', 1)],
+        vec![('a', 5), ('b', 2), ('r', 2), ('d', 1), ('c', 1)],
         count_chars("abradacabra")
     )
 }
