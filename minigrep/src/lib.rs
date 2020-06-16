@@ -1,49 +1,51 @@
 use std::error::Error;
-use std::fs;
+use std::{fs, env};
 
-pub struct Config<'a> {
-  pub query: &'a str,
-  pub filename: &'a str,
+pub struct Config {
+  pub query: String,
+  pub filename: String,
+  pub case_sensitive: bool
 }
 
-impl Config<'_> {
-  pub fn new(args: &[String]) -> Result<Config, &'static str> {
-    if args.len() < 3 {
-      return Err("Not enough arguments");
-    }
-    Ok(Config {
-      query: &args[1],
-      filename: &args[2],
-    })
+impl Config {
+  pub fn new(mut args: std::env::Args) -> Result<Config, &'static str> {
+    args.next();
+    let query = match args.next() {
+      Some(arg) => arg,
+      None => return Err("Didn't get a pattern to search with.")
+    };
+    let filename = match args.next() {
+      Some(arg) => arg,
+      None => return Err("Didn't get a file name.")
+    };
+    let case_sensitive = env::var("CASE_INSENSITIVE").is_err();
+    Ok(Config { query, filename, case_sensitive })
   }
 }
 
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
   let contents = fs::read_to_string(config.filename)?;
-  for line in search_case_sensitive(&config.query, &contents) {
+  let results = if config.case_sensitive {
+    search_case_sensitive(&config.query, &contents)
+  } else {
+    search_case_insensitive(&config.query, &contents)
+  };
+  for line in results {
     println!("{}", line);
   }
   Ok(())
 }
 
 pub fn search_case_sensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
-  let mut results = Vec::new();
-  for line in contents.lines() {
-    if line.contains(query) {
-      results.push(line);
-    }
-  }
-  results
+  contents.lines()
+      .filter(|line| line.contains(query))
+      .collect()
 }
 
 pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
-  let mut results = Vec::new();
-  for line in contents.lines() {
-    if line.to_lowercase().contains(&query.to_lowercase()) {
-      results.push(line);
-    }
-  }
-  results
+  contents.lines()
+      .filter(|line| line.to_lowercase().contains(&query.to_lowercase()))
+      .collect()
 }
 
 #[cfg(test)]
