@@ -27,7 +27,9 @@
       <sourceFolder url="file://$MODULE_DIR$/char_count/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/minigrep/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/smart_pointers/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/fearless_concurrency/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/char_count/target" />
+      <excludeFolder url="file://$MODULE_DIR$/fearless_concurrency/target" />
       <excludeFolder url="file://$MODULE_DIR$/fibonacci/target" />
       <excludeFolder url="file://$MODULE_DIR$/generics/target" />
       <excludeFolder url="file://$MODULE_DIR$/hash_map/target" />
