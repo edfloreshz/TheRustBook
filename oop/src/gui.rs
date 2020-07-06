@@ -25,3 +25,16 @@ impl Draw for Button {
     println!("Button named {} has width {} and height {}", self.label, self.width, self.height)
   }
 }
+
+pub fn construct() {
+  let screen = Screen {
+    components: vec![
+      Box::new(Button{
+        width: 50,
+        height: 20,
+        label: String::from("Start")
+      })
+    ]
+  };
+  screen.run()
+}
