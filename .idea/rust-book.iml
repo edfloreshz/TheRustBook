@@ -29,11 +29,16 @@
       <sourceFolder url="file://$MODULE_DIR$/smart_pointers/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/fearless_concurrency/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/oop/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/macros/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/hello_macro/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/char_count/target" />
       <excludeFolder url="file://$MODULE_DIR$/fearless_concurrency/target" />
       <excludeFolder url="file://$MODULE_DIR$/fibonacci/target" />
       <excludeFolder url="file://$MODULE_DIR$/generics/target" />
       <excludeFolder url="file://$MODULE_DIR$/hash_map/target" />
+      <excludeFolder url="file://$MODULE_DIR$/hello_macro/target" />
+      <excludeFolder url="file://$MODULE_DIR$/macros/hello_macro/target" />
+      <excludeFolder url="file://$MODULE_DIR$/macros/target" />
       <excludeFolder url="file://$MODULE_DIR$/minigrep/target" />
       <excludeFolder url="file://$MODULE_DIR$/modules/target" />
       <excludeFolder url="file://$MODULE_DIR$/oop/target" />
