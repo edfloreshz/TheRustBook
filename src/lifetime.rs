@@ -1,10 +1,10 @@
 pub fn test_lifetime() {
     let string1 = String::from("long string");
-    let res;
+    let _res;
     {
         // This gives an error because --------------------------
         let string2 = String::from("short"); //                 |
-        res = longest(string1.as_str(), string2.as_str()); //   |
+        _res = longest(string1.as_str(), string2.as_str()); //      |
     } // string2 is destroyed after this line. <-----------------
     // println!("{}", res);
 

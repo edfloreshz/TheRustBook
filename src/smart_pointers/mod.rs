@@ -5,7 +5,7 @@ mod drop;
 mod box_ptr;
 mod rc_ptr;
 
-use box_ptr::{MyBox, List};
+use box_ptr::{MyBox};
 use rc_ptr::RcList;
 use drop::CustomSmartPointer;
 use crate::smart_pointers::box_ptr::List::{Cons, Nil};
@@ -17,7 +17,7 @@ use std::cell::RefCell;
 use crate::smart_pointers::weak_ptr::Node;
 
 pub fn test_smrt_ptrs() {
-  let list = Cons(
+  let _list = Cons(
     1,
     Box::new(Cons(2, Box::new(Cons(3, Box::new(Nil))))),
   );
@@ -27,14 +27,14 @@ pub fn test_smrt_ptrs() {
   let m = MyBox::new(String::from("Rust"));
   hello(&m);
   // Drop
-  let c = CustomSmartPointer {data: String::from("Something")};
+  let _c = CustomSmartPointer {data: String::from("Something")};
   // Reference counting
   let a = Rc::new(RcCons(5, Rc::new(RcCons(10, Rc::new(RcNil)))));
   println!("Ref count after creating a = {}", Rc::strong_count(&a));
-  let b = RcCons(3, Rc::clone(&a));
+  let _b = RcCons(3, Rc::clone(&a));
   println!("Ref count after creating b = {}", Rc::strong_count(&a));
   {
-    let c = RcCons(4, Rc::clone(&a));
+    let _c = RcCons(4, Rc::clone(&a));
     println!("Ref count after creating c = {}", Rc::strong_count(&a));
   }
   println!("count after c goes out of scope = {}", Rc::strong_count(&a));

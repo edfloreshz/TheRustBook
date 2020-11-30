@@ -1,12 +1,10 @@
-fn main() {
-    println!("Hello, world!");
-}
-
+#[allow(dead_code)]
 fn add(x: i8, y: i8) -> i8 {
     x + y
 }
 
-fn substract(x: i8, y: i8) -> i8 {
+#[allow(dead_code)]
+fn subtract(x: i8, y: i8) -> i8 {
     x - y
 }
 
@@ -17,7 +15,7 @@ fn check_add() {
 }
 
 #[test]
-fn check_substract() {
-    let substraction = substract(4,2);
-    assert_eq!(substraction, 2);
+fn check_subtract() {
+    let subtraction = subtract(4, 2);
+    assert_eq!(subtraction, 2);
 }

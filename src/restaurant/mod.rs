@@ -2,7 +2,7 @@
 //  edfloreshz@gmail.com
 
 mod front_of_the_house;
-use front_of_the_house::{hosting, serving};
+use front_of_the_house::{serving};
 
 pub fn serve() {
     serving::serve_order();

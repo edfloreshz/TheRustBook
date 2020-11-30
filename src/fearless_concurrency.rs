@@ -19,6 +19,7 @@ pub fn call_threads() {
     }
 }
 
+#[allow(dead_code)]
 pub fn create_channels() {
     let (tx, rx) = mpsc::channel();
 

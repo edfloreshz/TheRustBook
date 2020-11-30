@@ -17,6 +17,6 @@ struct Point {
 
 impl Point {
     fn distance(self, p: Point) -> f64 {
-        (self.x-p.x).hypot((self.y-p.y))
+        (self.x-p.x).hypot(self.y-p.y)
     }
 }

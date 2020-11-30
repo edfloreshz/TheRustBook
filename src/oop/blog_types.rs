@@ -11,6 +11,7 @@ impl Post {
       content: String::new()
     }
   }
+  #[allow(dead_code)]
   pub fn content(&self) -> &str {
     &self.content
   }

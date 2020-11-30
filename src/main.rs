@@ -31,7 +31,6 @@ fn main() {
     hash_map::pig_latin::test_transform();
     generics::get_largest();
     lifetime::test_lifetime();
-    guessing_game::guess();
     iterators::iter();
     rectangles::test_rectangles();
     structs::test_structs();
